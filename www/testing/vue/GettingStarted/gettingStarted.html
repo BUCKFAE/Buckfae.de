@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="gettingStarted.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <!-- Fist example -->
+        <div id="app">
+            {{ message }}
+        </div>
+
+        <br>
+
+        <!-- Second example -->
+        <div id="app-2">
+          <span v-bind:title="message">
+              Hover your mouse over me to see my
+              dynamically bound title!
+          </span>
+        </div>
+
+        <br>
+
+        <div id="app-3">
+            <!-- Will disappear instantly -->
+            <span v-if="seen">
+                Now can see me <br>
+                If you want to change that you can
+                <ul>
+                    <!-- Everything in <span class="highlighted-red"></span> will be red instead of black -->
+                    <li>Set <span class="highlighted-red">app3.seen = false </span> in the console</li>
+                    <li>Or hit the "Toggle visibility" Button</li>
+                </ul>
+            </span>
+            <!-- Will fade out as specified in index.css-->
+            <transition name="fade">
+                <p v-if="seen">
+                    I am basically the same thing as above
+                    but instead of disappearing i fade away
+                </p>
+            </transition>
+            <button v-on:click="seen = !seen">
+                Toggle visibility
+            </button>
+        </div>
+        <script src="gettingStarted.js"></script>
+    </body>
+</html>
