@@ -98,10 +98,10 @@ function gcd_two_numbers(x, y) {
 function restart(){
   stepCounter = 0;
 
-  logoSizeX = document.getElementById("LogoX").value;
-  logoSizeY = document.getElementById("LogoY").value;
-  canvasSizeX = document.getElementById("CanvasX").value;
-  canvasSizeY = document.getElementById("CanvasY").value;
+  logoSizeX = parseInt(document.getElementById("LogoX").value);
+  logoSizeY = parseInt(document.getElementById("LogoY").value);
+  canvasSizeX = parseInt(document.getElementById("CanvasX").value);
+  canvasSizeY = parseInt(document.getElementById("CanvasY").value);
 
   stepsRequiredPerCycle = calculateRequiredSteps();
 
